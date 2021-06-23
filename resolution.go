@@ -18,3 +18,11 @@ func NewResolution(width, height int64) Resolution {
 func (r Resolution) CalculateDiagonal() float64 {
 	return math.Sqrt(float64(r.width*r.width + r.height*r.height))
 }
+
+func (r Resolution) CalculateAspectRatio() (int64, int64) {
+	if r.width == 0 || r.height == 0 {
+		return 0, 0
+	}
+
+	return 0, 0
+}
