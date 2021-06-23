@@ -24,5 +24,7 @@ func (r Resolution) CalculateAspectRatio() (int64, int64) {
 		return 0, 0
 	}
 
-	return 0, 0
+	gcd := calculateGCD(r.width, r.height)
+
+	return r.width / gcd, r.height / gcd
 }

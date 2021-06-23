@@ -32,5 +32,10 @@ func main() {
 		return
 	}
 
-	fmt.Println("DPI:", dpi.CalculateDPI(dpi.NewResolution(width, height), diagonal))
+	r := dpi.NewResolution(width, height)
+
+	fmt.Printf("DPI: %.2f\n", dpi.CalculateDPI(r, diagonal))
+
+	wRatio, hRatio := r.CalculateAspectRatio()
+	fmt.Printf("Aspect Ratio: %d:%d\n", wRatio, hRatio)
 }
