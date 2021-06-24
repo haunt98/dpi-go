@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/haunt98/dpi-go"
+	"github.com/haunt98/resolution-go"
 )
 
 func main() {
@@ -32,10 +32,10 @@ func main() {
 		return
 	}
 
-	r := dpi.NewResolution(width, height)
+	r := resolution.NewResolution(width, height)
 
-	fmt.Printf("DPI: %.2f\n", dpi.CalculateDPI(r, diagonal))
+	fmt.Printf("DPI: %.2f\n", resolution.PPI(r, diagonal))
 
-	wRatio, hRatio := r.CalculateAspectRatio()
+	wRatio, hRatio := r.AspectRatio()
 	fmt.Printf("Aspect Ratio: %d:%d\n", wRatio, hRatio)
 }
